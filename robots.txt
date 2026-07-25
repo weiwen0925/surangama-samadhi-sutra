@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://weiwen0925.github.io/surangama-samadhi-sutra/sitemap.xml
