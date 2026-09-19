@@ -1834,7 +1834,7 @@ document.addEventListener("click",function(e){
  var d=document.querySelector(".blq-door:not([hidden])")||document.getElementById("blq-intro");
  if(d)d.scrollIntoView({behavior:"smooth",block:"center"});
 },true);
-}catch(e){}})();</script><!--/WY-BLQNAV--><!--WY-MARK--><style id="wy-mark-css" data-v="3">
+}catch(e){}})();</script><!--/WY-BLQNAV--><!--WY-MARK--><style id="wy-mark-css" data-v="3.1">
 #wyMkBar{position:fixed;right:22px;bottom:82px;z-index:8990;display:flex;align-items:stretch;
  background:rgba(42,34,24,.95);border:1.2px solid #b8860b;border-radius:999px;overflow:hidden;
  box-shadow:0 4px 14px rgba(0,0,0,.28);font-family:'Noto Sans TC',sans-serif;
@@ -2033,19 +2033,22 @@ function setFold(f){try{if(f)localStorage.setItem(FOLD,"1");else localStorage.re
 /* 書籤標題：品名之外，再往 iframe 內頁找最靠近讀處的「第X章」與節名，同一品記多處也分得開 */
 function titleAt(id,y){
  var base=titleOf(id),el=document.getElementById(id);
+ function seg(t){t=clean(t);var p=t.split(/\s*[·・]\s*/);t=p[p.length-1]||t;
+  return t.replace(/([\u3400-\u9fff\uff00-\uffef])\s+(?=[\u3400-\u9fff\uff00-\uffef])/g,"$1");}
  try{
-  var nu=el.querySelector(".ch-num"),pin=nu?clean(nu.textContent).replace(/^.*·\s*/,""):"";
+  var nu=el.querySelector(".ch-num"),pin=nu?seg(nu.textContent):"";
+  var head=pin||base;
   var f=el.querySelector("iframe.ch-frame");
-  if(!f||!f.contentDocument)return pin?(pin+" · "+base):base;
+  if(!f||!f.contentDocument)return head;
   var line=y+window.innerHeight*0.42-topOf(f),d=f.contentDocument,ch="",sec="";
   var cs=d.querySelectorAll("section.chapter"),i,r;
-  for(i=0;i<cs.length;i++){r=cs[i].getBoundingClientRect();if(r.top<=line){var cn=cs[i].querySelector(".ch-num");if(cn)ch=clean(cn.textContent);}}
+  for(i=0;i<cs.length;i++){r=cs[i].getBoundingClientRect();if(r.top<=line){var cn=cs[i].querySelector(".ch-num");if(cn)ch=seg(cn.textContent);}}
   var hs=d.querySelectorAll("h2[id]");
-  for(i=0;i<hs.length;i++){r=hs[i].getBoundingClientRect();if(r.top<=line&&r.top>-1e9){
-   var c=hs[i].cloneNode(true),j=c.querySelectorAll("button,svg");for(var q=0;q<j.length;q++)if(j[q].parentNode)j[q].parentNode.removeChild(j[q]);
+  for(i=0;i<hs.length;i++){r=hs[i].getBoundingClientRect();if(r.top<=line){
+   var c=hs[i].cloneNode(true),j=c.querySelectorAll("button,svg"),q;for(q=0;q<j.length;q++)if(j[q].parentNode)j[q].parentNode.removeChild(j[q]);
    var t=clean(c.textContent);if(t)sec=t;}}
-  if(!ch&&!sec)return pin?(pin+" · "+base):base;
-  return (pin||base)+(ch?" · "+ch:"")+(sec?" · "+sec.replace(/\s+/g," "):"");
+  if(ch&&ch===head)ch="";
+  return head+(ch?" · "+ch:"")+(sec?" · "+sec:"");
  }catch(e){return base;}
 }
 /* 譬喻藏有「依卷／依頌」兩檢視，書籤若在沒顯示的那一邊，先替讀者切過去 */
