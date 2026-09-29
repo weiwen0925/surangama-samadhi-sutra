@@ -608,10 +608,10 @@ function resizeFrame(f){ /* wy-rz v2：只在高度真的變了才寫，避免�
  try{
   var d=f.contentDocument||f.contentWindow.document;
   if(!d||!d.body)return;
-  if(f.__wyDoc!==d){f.__wyDoc=d; f.__wyH=0; d.body.style.minHeight='0'; d.body.style.height='auto';
+  if(f.__wyDoc!==d){f.__wyDoc=d; f.__wyH=0; f.__wyN=0; d.body.style.minHeight='0'; d.body.style.height='auto';
    if(d.documentElement){d.documentElement.style.minHeight='0';d.documentElement.style.height='auto';}}
   var h=d.body.scrollHeight;
-  if(h>100&&h!==f.__wyH){ var rc=f.getBoundingClientRect(), dh=h-rc.height;
+  if(h>100&&h!==f.__wyH&&(f.__wyN=(f.__wyN||0)+1)<=30){ var rc=f.getBoundingClientRect(), dh=h-rc.height;
    f.__wyH=h;f.style.height=h+'px';f.style.minHeight='0';
    /* 視窗上方的品框長高時，同步下移捲動位置，畫面不跳 */
    if(dh&&(rc.bottom<=0||(f.__wyPh&&rc.top<0)))window.scrollBy(0,dh);
@@ -782,6 +782,20 @@ if(sbBrand)sbBrand.addEventListener('click',function(e){e.preventDefault();windo
 </script>
 
 
+<script id="wy-fontgate">/* wy-lazy v1.1 */
+/* 字型閘：品框內文先用系統字排版，等 Noto 各字重（含所需字集）全部載妥後一次切換——
+   否則每到一片字型就整頁重排一次（一品約 80 片，每次約 0.2 秒）。內容與版式不變，只是切換時機不同。 */
+window.__wyFontGate=function(h){ if(typeof h!=='string'||h.indexOf('wy-fg-js')>=0||h.indexOf('fonts.googleapis.com')<0) return h;
+ var G='<style id="wy-fg-css">html.wy-fg *{font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif!important}</style>'
+  +'<script id="wy-fg-js">(function(){var h=document.documentElement;h.classList.add("wy-fg");var done=false;function off(){if(done)return;done=true;h.classList.remove("wy-fg");}'
+  +'function ld(){var ps=[],txt="";try{txt=(document.body&&document.body.textContent||"").slice(0,60000);}catch(e){}'
+  +'[["Noto Serif TC",[400,600,700,900]],["Noto Sans TC",[300,400,500,700]]].forEach(function(w){w[1].forEach(function(wt){try{ps.push(document.fonts.load(wt+\' 1em "\'+w[0]+\'"\',txt));}catch(e){}});});'
+  +'Promise.all(ps).then(off,off);}'
+  +'var n=0;function go(){if(!document.fonts||!document.fonts.load){off();return;}var has=false;try{document.fonts.forEach(function(f){if(/Noto/.test(f.family))has=true;});}catch(e){}'
+  +'if(has||n++>40)ld();else setTimeout(go,100);}'
+  +'setTimeout(off,9000);if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go();})();<\/script>';
+ var m=/<head[^>]*>/i.exec(h); return m?(h.slice(0,m.index+m[0].length)+G+h.slice(m.index+m[0].length)):(G+h); };
+</script>
 <script id="wy-decoder">
 (function(){
  function dec(b64){
@@ -809,7 +823,7 @@ if(sbBrand)sbBrand.addEventListener('click',function(e){e.preventDefault();windo
       捲近、點目次、改網址錨點時立即解開到該品為止。 */
    function mk(k){ var f=frames[k]; if(!f||f.__wyDone)return; f.__wyDone=1;
      var v=f.getAttribute("data-c"); f.removeAttribute("data-c");
-     try{ f.setAttribute("srcdoc",dec(v)); }catch(e){} }
+     try{ f.setAttribute("srcdoc",window.__wyFontGate(dec(v))); }catch(e){} }
    var pauseUntil=0;
    function upTo(n){ n=Math.min(n,frames.length); for(var k=0;k<n;k++)mk(k); }
    function around(n){ n=Math.min(Math.max(n,1),frames.length); mk(n-1); }
@@ -826,7 +840,19 @@ if(sbBrand)sbBrand.addEventListener('click',function(e){e.preventDefault();windo
    try{ document.documentElement.style.overflowAnchor="none"; }catch(e){}
    for(var j=0;j<frames.length;j++){ frames[j].__wyPh=1; if(!frames[j].style.height) frames[j].style.height="3200px"; }
    var w0=want(location.hash); if(w0>=999)upTo(frames.length); else around(Math.max(1,w0));
-   window.addEventListener("hashchange",function(){ var n=want(location.hash); if(n)pauseUntil=Date.now()+2500; if(n>=999)upTo(frames.length); else if(n)around(n); });
+   /* wy-lazy v1.1：品框內的深連結（外層找不到該 id）——品框解開、字型切換、上方品框長高都會讓落點移動，解開後 8 秒內每 0.15 秒校正一次，讀者一動手就停 */
+   var userMoved=false; ["wheel","touchstart","keydown","mousedown"].forEach(function(ev){ window.addEventListener(ev,function(){ userMoved=true; },{passive:true,capture:true}); });
+   function findY(id){ var el=null; try{ el=document.getElementById(id); }catch(e){}
+    if(el&&el.tagName!=="IFRAME") return window.scrollY+el.getBoundingClientRect().top-64;
+    for(var i=0;i<frames.length;i++){ try{ var d=frames[i].contentDocument, e=d&&d.getElementById(id);
+     if(e){ var sy=0; try{ sy=frames[i].contentWindow.pageYOffset||0; }catch(x){} return window.scrollY+frames[i].getBoundingClientRect().top+e.getBoundingClientRect().top+sy-64; } }catch(e2){} }
+    return null; }
+   var stT=0;
+   function settle(h){ var id=(h||"").replace(/^#/,""); if(!id) return; var outer=null; try{ outer=document.getElementById(id); }catch(e){} if(outer) return;
+    var until=Date.now()+8000; userMoved=false; clearTimeout(stT);
+    (function tick(){ if(userMoved||Date.now()>until) return; var y=findY(id); if(y!==null){ y=Math.max(0,y); if(Math.abs(y-window.scrollY)>3) window.scrollTo(0,y); } stT=setTimeout(tick,150); })(); }
+   if(w0&&w0<999) settle(location.hash);
+   window.addEventListener("hashchange",function(){ var n=want(location.hash); if(n)pauseUntil=Date.now()+3000; if(n>=999)upTo(frames.length); else if(n){ around(n); settle(location.hash); } });
    window.addEventListener("click",function(e){ var a=e.target;
      while(a&&a.tagName!=="A")a=a.parentElement; if(!a)return;
      var n=want(a.getAttribute("href")); if(!n)return;
