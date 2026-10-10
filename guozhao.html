@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#1c1410">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect x=%274%27 y=%274%27 width=%2756%27 height=%2756%27 rx=%2710%27 fill=%27%23a8402e%27 stroke=%27%23db8c68%27 stroke-width=%274%27/%3E%3Ctext x=%2732%27 y=%2745%27 font-size=%2734%27 text-anchor=%27middle%27 fill=%27%23fbe9dc%27 font-family=%27serif%27%3E%E5%AE%9A%3C/text%3E%3C/svg%3E">
+<title>首楞嚴過招場</title>
+<meta name="description" content="《佛說首楞嚴三昧經》卷上第一品〈序分〉影片複習遊戲：序脈排序、疑者出招你來接、經文白話、原文填空、中論對讀、配對快打。原典與白話依首楞嚴三昧經讀本逐字照錄。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;600;700;900&display=swap">
+<style>
+/* 版式：門頁「首楞嚴三昧經導讀影片」朱砂暖色框景的延伸——赭墨底、朱砂線、朱印「過招」、象牙原典卡；單一深色（與門頁一致，刻意不做淺色） */
+:root{
+  --ink-0:#140d0a; --ink-1:#1c1410; --ink-2:#21181a; --ink-3:#2c1e17;
+  --line:rgba(219,140,104,.24); --line-2:rgba(219,140,104,.5);
+  --sa:#db8c68; --sa2:#b0603f; --sink:#f6dccb; --text:#f3e4d8; --mute:#c3b39a; --cream:#fff1e6; --celadon:#d5ece4;
+  --seal:#a8402e; --seal-ink:#fbe9dc;
+  --ivory-line:rgba(246,220,203,.4); --ivory-wash:rgba(246,220,203,.06);
+  --ok:#9fd6c4; --ok-bg:rgba(159,214,196,.12); --bad:#ef7d8a; --bad-bg:rgba(239,125,138,.13);
+  --f-display:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --f-latin:"Cormorant Garamond","Times New Roman",serif;
+  --r:12px; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--ink-1)}
+body{margin:0;background:radial-gradient(80% 50% at 50% 0%,rgba(219,140,104,.13),transparent 70%),var(--ink-1);color:var(--text);font-family:var(--f-body);font-size:18px;line-height:1.75;min-height:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--sa);outline-offset:3px}
+a{color:var(--sa)}
+.wrap{position:relative;max-width:960px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+.frame{position:relative;border:1px solid var(--line-2);border-radius:22px;padding:34px 30px 30px;background:linear-gradient(180deg,rgba(44,30,23,.82),rgba(33,24,19,.62));box-shadow:0 0 0 1px rgba(219,140,104,.08),0 34px 70px -34px rgba(0,0,0,.8);overflow:hidden}
+.frame::after{content:"";position:absolute;inset:9px;border:1px solid rgba(219,140,104,.12);border-radius:16px;pointer-events:none}
+.frame::before{content:"定";position:absolute;right:-26px;top:-60px;font-family:var(--f-display);font-size:300px;font-weight:900;line-height:1;color:rgba(219,140,104,.05);pointer-events:none}
+@media (max-width:640px){.frame{padding:24px 14px 20px;border-radius:16px}.frame::before{font-size:200px}}
+.top{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.eyebrow{font-family:var(--f-latin);font-style:italic;font-size:clamp(16px,3.2vw,21px);letter-spacing:.12em;color:var(--sa2)}
+.ttl{display:inline-flex;align-items:center;gap:16px}
+h1{margin:0;font-family:var(--f-display);font-weight:900;font-size:clamp(32px,7vw,46px);letter-spacing:.18em;color:var(--sink);text-wrap:balance;line-height:1.2}
+.seal{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:38px;height:58px;border-radius:4px;background:var(--seal);color:var(--seal-ink);font-family:var(--f-display);font-size:17px;font-weight:700;line-height:1.15;box-shadow:inset 0 0 0 2px rgba(251,233,220,.35),0 4px 10px -4px rgba(0,0,0,.6);transform:rotate(-3deg);flex:none}
+.vol{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-display);font-size:17px;letter-spacing:.12em;color:var(--text)}
+.vol b{font-weight:700;color:var(--sa)}
+.sub{margin:0;color:var(--mute);font-size:17px;max-width:40em}
+.backs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;font-size:15px}
+.backs a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--line-2)}
+.backs a:hover{color:var(--sa);border-bottom-color:var(--sa)}
+.backs a.yt{color:var(--sa)}
+.stages{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:26px 0 0;padding:12px;border:1px solid var(--line);border-radius:12px;background:rgba(20,13,10,.3)}
+@media (max-width:520px){.stages{grid-template-columns:repeat(2,minmax(0,1fr));padding:10px}.stg span{font-size:17px}}
+@media (min-width:760px){.stages{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.stg{display:flex;flex-direction:column;align-items:center;gap:0;padding:8px 4px 7px;border:1px solid rgba(219,140,104,.32);border-radius:8px;background:rgba(219,140,104,.05);text-align:center;min-width:0;transition:border-color .2s,transform .2s,box-shadow .2s}
+.stg:hover{border-color:var(--sa);transform:translateY(-2px)}
+.stg b{font-family:var(--f-display);font-weight:500;font-size:13px;color:var(--mute)}
+.stg span{font-family:var(--f-display);font-weight:600;font-size:16px;line-height:1.4;color:var(--text)}
+.stg em{font-style:italic;font-family:var(--f-latin);font-size:15px;color:var(--sa2);min-height:1.2em;line-height:1.3}
+.stg[aria-current="true"]{border-color:var(--sa);background:linear-gradient(180deg,#eab08f,#c97452);box-shadow:0 6px 16px -8px rgba(219,140,104,.7)}
+.stg[aria-current="true"] b,.stg[aria-current="true"] em{color:#5a2c1a}
+.stg[aria-current="true"] span{color:#2a140c;font-weight:700}
+main{position:relative;margin-top:22px}
+.panel{display:flex;flex-direction:column;gap:16px}
+.ptitle{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;border-bottom:1px dashed var(--line);padding-bottom:10px}
+.ptitle h2{margin:0;font-family:var(--f-display);font-weight:700;font-size:clamp(23px,4.6vw,28px);letter-spacing:.08em;color:var(--sink)}
+.ptitle p{margin:0;font-family:var(--f-latin);font-style:italic;font-size:18px;color:var(--sa2)}
+.hint{margin:0;color:var(--mute);font-size:17px}
+.retreat{margin:0;font-size:17px;color:var(--sa);border-left:2px solid var(--ivory-line);padding-left:12px}
+.qrow{display:flex;gap:18px;align-items:flex-start;border:1px solid var(--line-2);border-radius:var(--r);padding:18px;background:linear-gradient(180deg,rgba(219,140,104,.09),rgba(33,24,19,.62))}
+.pill{display:flex;flex-direction:column;align-items:center;gap:6px;flex:none;width:72px}
+.pill i{font-style:normal;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;min-height:72px;padding:8px 6px;border-radius:4px;background:var(--seal);color:var(--seal-ink);font-family:var(--f-display);font-weight:700;font-size:18px;letter-spacing:.12em;box-shadow:inset 0 0 0 2px rgba(251,233,220,.3),0 4px 10px -4px rgba(0,0,0,.6);transform:rotate(-2deg)}
+.pill small{font-size:13px;color:var(--mute);letter-spacing:.06em;text-align:center}
+.qt{min-width:0;display:flex;flex-direction:column;gap:6px}
+.qbig{margin:0;font-family:var(--f-display);font-weight:700;font-size:clamp(22px,4.6vw,30px);line-height:1.5;color:var(--cream);text-wrap:balance}
+.qmeta{margin:0;font-size:16px;color:var(--mute)}
+.qmeta b{color:var(--text);font-weight:500}
+.opts{display:grid;grid-template-columns:1fr;gap:10px}
+@media (min-width:680px){.opts{grid-template-columns:1fr 1fr}}
+.opt{display:flex;flex-direction:column;gap:3px;text-align:left;border:1px solid rgba(219,140,104,.34);border-radius:10px;background:rgba(219,140,104,.05);padding:13px 16px;min-width:0;transition:border-color .2s,background .2s}
+.opt strong{font-family:var(--f-display);font-weight:700;font-size:20px;color:var(--text)}
+.opt span{font-size:15px;color:var(--mute)}
+.opt.plain{font-size:18px;line-height:1.6;color:var(--text)}
+.opt:hover:not(:disabled){border-color:var(--sa);background:rgba(219,140,104,.11)}
+.opt:disabled{cursor:default}
+.opt.right{background:var(--ok-bg);border-color:var(--ok)} .opt.right strong,.opt.plain.right{color:var(--ok)}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad)} .opt.wrong strong,.opt.plain.wrong{color:var(--bad)}
+.opt.dim{opacity:.45}
+.fb{border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:12px;border:1px solid var(--line-2);background:rgba(33,24,19,.7)}
+.fb.ok{border-color:rgba(159,214,196,.55);background:linear-gradient(180deg,var(--ok-bg),rgba(33,24,19,.62))}
+.fb.no{border-color:rgba(239,125,138,.55);background:linear-gradient(180deg,var(--bad-bg),rgba(33,24,19,.62))}
+.fb h3{margin:0;font-family:var(--f-display);font-size:20px;font-weight:700;letter-spacing:.06em}
+.fb.ok h3{color:var(--ok)} .fb.no h3{color:var(--bad)}
+.fb p{margin:0}
+.fb b{color:var(--cream);font-weight:600}
+.verse{border:1px solid var(--ivory-line);border-radius:10px;padding:12px 18px;background:var(--ivory-wash);box-shadow:inset 0 0 0 3px rgba(28,19,15,.55),inset 0 0 0 4px rgba(219,140,104,.2)}
+.verse .lab{font-size:14px;letter-spacing:.12em;color:var(--sa);font-weight:700}
+.verse .src{margin:4px 0 0;text-align:right;font-size:14px;color:var(--mute);letter-spacing:.06em}
+.verse .ln{margin:0;font-family:var(--f-display);font-weight:600;font-size:clamp(19px,4vw,22px);line-height:1.85;color:var(--cream);letter-spacing:.04em}
+.quote{margin:0;font-family:var(--f-display);font-weight:600;font-size:19px;line-height:1.8;color:var(--cream)}
+.vlink{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;font-size:16px}
+.vlink a{text-decoration:none;border-bottom:1px solid var(--ivory-line)}
+.vlink a:hover{color:var(--cream);border-bottom-color:var(--cream)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid rgba(219,140,104,.4);border-radius:999px;background:rgba(219,140,104,.05);padding:7px 18px;font-size:17px;font-family:var(--f-display);font-weight:600;color:var(--text)}
+.chip:hover:not(:disabled){border-color:var(--sa);background:rgba(219,140,104,.13)}
+.chip.right{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)} .chip.wrong{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.score{font-size:16px;color:var(--mute);font-variant-numeric:tabular-nums}
+.btn{border:1px solid var(--sa);border-radius:999px;padding:10px 24px;background:linear-gradient(180deg,#eab08f,#c97452);color:#2a140c;font-weight:700;letter-spacing:.1em;font-size:17px;box-shadow:0 4px 12px -5px rgba(219,140,104,.6)}
+.btn:hover:not(:disabled){filter:brightness(1.08)}
+.btn.ghost{background:rgba(219,140,104,.06);color:var(--text);border-color:var(--line-2);box-shadow:none}
+.btn:disabled{opacity:.4;cursor:default}
+.olist{display:flex;flex-direction:column;gap:10px}
+.ocard{display:flex;gap:14px;align-items:flex-start;text-align:left;border:1px solid rgba(219,140,104,.32);border-radius:10px;background:rgba(219,140,104,.05);padding:12px 16px;transition:border-color .2s}
+.ocard:hover{border-color:var(--sa)}
+.ocard .n{flex:none;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px dashed var(--sa2);font-family:var(--f-latin);font-size:19px;color:var(--sa2);font-variant-numeric:tabular-nums}
+.ocard.sel{border-color:var(--line-2);background:rgba(219,140,104,.11)}
+.ocard.sel .n{background:var(--seal);border:none;color:var(--seal-ink);font-weight:600;box-shadow:inset 0 0 0 1.5px rgba(251,233,220,.4)}
+.ocard .t{min-width:0;font-family:var(--f-display);font-weight:600;font-size:19px;line-height:1.6;color:var(--text)}
+.ocard .t .score{font-family:var(--f-body);font-weight:400;font-size:15px}
+.ocard .t a{font-family:var(--f-body);font-weight:500;font-size:15px;text-decoration:none;white-space:nowrap}
+.ocard.good{background:var(--ok-bg);border-color:rgba(159,214,196,.6)} .ocard.good .n{background:var(--ok);border:none;color:#12261a}
+.ocard.badpos{background:var(--bad-bg);border-color:rgba(239,125,138,.6)} .ocard.badpos .n{background:var(--bad);border:none;color:#2a120b}
+.link{margin:-2px 0 0 48px;font-size:16px;color:var(--sa)}
+.blank{display:inline-block;min-width:2.4em;border-bottom:2px solid var(--sa);text-align:center;color:var(--sa)}
+.blank.filled{border-bottom-color:var(--ok);color:var(--ok)}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mcol{display:flex;flex-direction:column;gap:10px;min-width:0}
+.mcol h4{margin:0;font-size:15px;color:var(--mute);font-weight:500;letter-spacing:.1em}
+.mi{text-align:left;border:1px solid rgba(219,140,104,.32);border-radius:10px;background:rgba(219,140,104,.05);padding:11px 13px;font-size:17px;line-height:1.55;min-width:0;color:var(--text)}
+.mi:hover:not(:disabled){border-color:var(--sa)}
+.mi.pick{border-color:var(--sa);box-shadow:0 0 0 2px var(--sa) inset;background:rgba(219,140,104,.14)}
+.mi.done{background:var(--ok-bg);border-color:var(--ok);opacity:.6}
+.mi.shake{background:var(--bad-bg);border-color:var(--bad)}
+.mi .src{display:block;font-size:13px;color:var(--sa2);letter-spacing:.08em}
+.end{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.big{margin:0;font-family:var(--f-latin);font-weight:500;font-size:clamp(34px,7vw,46px);line-height:1.2;color:var(--sa);font-variant-numeric:tabular-nums}
+.road{display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center;font-family:var(--f-display);font-size:16px;color:var(--text)}
+.road span{border:1px solid var(--line-2);border-radius:6px;padding:2px 10px;background:rgba(219,140,104,.06)}
+.road i{font-style:normal;color:var(--sa2)}
+.foot{position:relative;margin-top:26px;padding-top:14px;border-top:1px dashed var(--line);color:var(--mute);font-size:15px;display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between}
+.foot i{font-family:var(--f-latin);letter-spacing:.1em;color:var(--sa2)}
+@media (prefers-reduced-motion:no-preference){
+  .fb,.end{animation:rise .3s ease-out}
+  @keyframes rise{from{transform:translateY(6px)}to{transform:none}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="frame">
+  <header class="top">
+    <div class="eyebrow">Śūraṅgama-samādhi Sūtra · Dialectic Arena</div>
+    <div class="ttl"><h1>首楞嚴過招場</h1><span class="seal" aria-hidden="true">過<br>招</span></div>
+    <div class="vol"><b>卷上 · 第一品</b>序分架構</div>
+    <p class="sub">看完導讀影片，換你上場：疑者一路發問，你從經文找出那一招。六關由易而難，最後把序分讀成一句——安住三昧而不動轉。</p>
+    <div class="backs"><a href="https://weiwen0925.github.io/dazhidulun-0/#sl-videos">← 回首楞嚴導讀影片</a><a class="yt" href="https://youtu.be/xxe-U1U3Zq0" target="_blank" rel="noopener">▶ 本品導讀影片 14:12</a><a href="https://weiwen0925.github.io/surangama-samadhi-sutra/#chapter-1" target="_blank" rel="noopener">讀本・卷上第一品</a><a href="https://weiwen0925.github.io/surangama-samadhi-sutra/#blq-1" target="_blank" rel="noopener">⚔ 讀本闖關檢核</a></div>
+  </header>
+  <nav class="stages" id="stages" aria-label="關卡"></nav>
+  <main id="main" aria-live="polite"></main>
+  <footer class="foot">
+    <span>原典與白話依「首楞嚴三昧經讀本」卷上第一品站頁逐字照錄（鳩摩羅什譯）；中論頌依讀本中觀義理卡所引。成績只存在這台裝置的瀏覽器。</span>
+    <i>Fascicle I · Chapter 1</i>
+  </footer>
+ </div>
+</div>
+<script>
+/* ───────── 影片與讀本座標：卷上第一品四節（導讀影片章節時間、讀本「章-節」） ───────── */
+const VID='xxe-U1U3Zq0', READ='https://weiwen0925.github.io/surangama-samadhi-sutra/#chapter-1-1-', BLQ='https://weiwen0925.github.io/surangama-samadhi-sutra/#blq-1';
+const SEG={
+ 1:{n:'如是我聞・法會處所',t:113,ch:'2-1'},
+ 2:{n:'菩薩德行總說・眾所知識',t:213,ch:'2-2'},
+ 3:{n:'二十六位菩薩名號與大會眾',t:370,ch:'2-3'},
+ 4:{n:'堅意菩薩之念言與請問',t:571,ch:'2-4'}
+};
+const ROAD=['如是我聞','菩薩德行','安住不動轉','二十六名號','依名入義','因病與藥','捨離之心','隨汝所問'];
+const UNIT='節';
+
+/* ───────── 資料：疑者九問與經文的答（序分四節） ───────── */
+const A=[
+ {id:'A1',seg:1,round:'第一節',q:'經文一開頭的「如是我聞」，只是客套的開場吧？',basis:'經典開頭大多這麼寫',keep:'開場白無關緊要',
+  name:'結集者的證言',tag:'以下所記皆為親聞，非後人自造',
+  gist:'「如是我聞」：我是這樣親自聽到的。它不是客套的開場，而是結集者的證言：以下所記，都是親聞，不是後人自造。',
+  src:[{lab:'原典・第一節',q:'如是我聞'}],
+  next:'開場交代了「誰聽到」，接著交代「在哪裡、有誰」：人數這一筆，也有話要說嗎？'},
+ {id:'A2',seg:1,round:'第一節',q:'比丘三萬二千、菩薩七萬二千，不過是一筆人數紀錄？',basis:'序分照例交代時、處、眾',keep:'人數只是背景',
+  name:'菩薩倍於比丘・大乘法會',tag:'人數比例本身已預告：此會以菩薩為主體',
+  gist:'菩薩七萬二千，比丘三萬二千，菩薩多了一倍以上。這個比例本身已經預告：這不是以聲聞為主體的集會，而是一場大乘法會。',
+  src:[{lab:'原典・第一節',q:'一時，佛在王舍城耆闍崛山中，與大比丘僧三萬二千人俱，菩薩摩訶薩七萬二千——'}],
+  next:'菩薩既是主角，經文接著一口氣列出他們的德行。十六句排比，重點在哪裡？'},
+ {id:'A3',seg:2,round:'第二節',q:'十六句德行排比，讀來繁複，抓得到重點嗎？',basis:'一長串讚歎，看似平鋪直敘',keep:'十六句一樣輕重',
+  name:'地基兩句',tag:'「安住三昧而不動轉」說心不動；「悉以得住三解脫門」說所住是空、無相、無作',
+  gist:'這一段真正的地基是兩句：「安住三昧而不動轉」，說心不動；「悉以得住三解脫門」，說所安住的是空、無相、無作。後面整品的伏筆，都靠這兩句撐住。',
+  src:[{lab:'原典・第二節',q:'安住三昧而不動轉，善能了知無盡之慧，得深法忍入深法門'},{lab:'原典・第二節',q:'悉以得住三解脫門，以無礙智通達三世'}],
+  next:'菩薩既已「安住三昧而不動轉」，那堅意菩薩後來起身合掌，算不算動了？'},
+ {id:'A4',seg:2,ch:'6-1',round:'第二節',q:'菩薩已「安住三昧而不動轉」，堅意菩薩卻起身合掌——這不就動了？',basis:'起身、偏袒右肩、右膝著地，都是動作',keep:'靜與動只能取一',
+  name:'住而後問',tag:'起身不是心隨境轉；心住三解脫門，為眾生而問',
+  gist:'有了「安住三昧」「三解脫門」這個地基，堅意菩薩起身發問，就不是心隨境轉，而是住而後問。靜是住於三解脫門，動是為眾生而問，兩者不是矛盾，而是同一件事的兩面。',
+  src:[{lab:'原典・第二節',q:'安住三昧而不動轉'},{lab:'原典・第四節',q:'作是念已，即從座起，偏袒右肩右膝著地，合掌向佛'}],
+  next:'德行說完，經文轉入名單：二十六位菩薩名號。這只是一份名冊嗎？'},
+ {id:'A5',seg:3,round:'第三節',q:'二十六位菩薩名號，不過是一份與會名冊？',basis:'名字一個接一個列下去',keep:'名號只是標籤',
+  name:'名號即德行之名',tag:'「諸根常定不亂」對「安住三昧而不動轉」；「辯才莊嚴」對「成就辯才樂說無盡」',
+  gist:'這些名號幾乎都是德行的具體化：「諸根常定不亂菩薩」，正對應上文的「安住三昧而不動轉」；「辯才莊嚴菩薩」，對應「成就辯才樂說無盡」。名單其實是把德行一一立了名。',
+  src:[{lab:'原典・第三節',q:'諸根常定不亂菩薩、實音聲菩薩、一切天讚菩薩、陀羅尼自在王菩薩、辯才莊嚴菩薩'}],
+  next:'名號既然對應德行，每位菩薩是不是就有那個名號所說的固定身分？'},
+ {id:'A6',seg:3,ch:'5-2',round:'第三節',q:'名號對應德行，那「轉不退法輪菩薩」就有轉不退法輪的固定身分吧？',basis:'名字說的就是他',keep:'名號背後有一個固定的自性',
+  name:'方便稱名・依名入義',tag:'就緣起中某一顯著功用而立名；可以依名入義，不可以執名為實',
+  gist:'若名號有自性，「轉不退法輪菩薩」就只能是轉不退法輪，不能兼具其他德行；可是經文明說「其諸菩薩德皆如是」，每位菩薩都具足前面的德行。所以名號是就緣起中某一個顯著的功用而立的方便稱名，可以依名入義，不可以執名為實。',
+  src:[{lab:'原典・第二節',q:'其諸菩薩德皆如是'}],
+  next:'名號說清楚了，輪到發問者：堅意菩薩已通達三世，為什麼還要問？'},
+ {id:'A7',seg:4,round:'第四節',q:'菩薩已「以無礙智通達三世」，還有什麼不知道、需要問？',basis:'問，通常是因為不知道',keep:'發問是為了求知',
+  name:'因病與藥・無一為己',tag:'十餘項對治清單，每一問都對應一類眾生的病',
+  gist:'堅意菩薩起身之前，先在心裡列了一張清單：守護佛種、法種、僧種，令魔宮隱蔽，摧伏增上慢，令種善根、令發心、令不退……十幾項，沒有一項是為了自己。這就是因病與藥：每一問都對應一類眾生的病。',
+  src:[{lab:'原典・第四節',q:'我於今者當問如來，以是所問，欲守護佛種、法種、僧種，令諸魔宮隱蔽不現，摧伏自大增上慢者'}],
+  next:'清單十幾項，哪一項最要緊？要治的又是什麼病？'},
+ {id:'A8',seg:4,ch:'4-2',round:'第四節',q:'要度眾生，給他們一個更好的見解，不就好了？',basis:'錯的見解換成對的見解',keep:'用新見解取代舊見解',
+  name:'令發捨離之心',tag:'計有所得住諸見者，皆悉令發捨離之心',
+  gist:'整張清單的核心是這一句：要治的不是知識不夠，而是「有所得」的心態本身。不是勸人改信一個更好的見解，而是令他捨離有所得的心——這和《中論》破見顯空，是同一條路。',
+  src:[{lab:'原典・第四節',q:'計有所得住諸見者，皆悉令發捨離之心'}],
+  next:'一切見都要捨，實相又不可言說——堅意菩薩這一問、佛這一答，還有必要嗎？'},
+ {id:'A9',seg:4,ch:'6-2',round:'第四節',q:'實相既然不可言說，發問、答問不都多餘？',basis:'言語道斷，說了也到不了',keep:'不可說，就不該說',
+  name:'不可執故能說',tag:'堅意「少有所問」，佛答「隨汝所問，吾當解說」',
+  gist:'不是「不可說故不說」，而是「不可執故能說」：正因實相不可執取，言說才可以自由地作為方便使用。所以堅意菩薩說「少有所問」，佛答「隨汝所問，吾當解說，令汝歡喜」。',
+  src:[{lab:'原典・第四節',q:'世尊！我今欲於如來法中少有所問，唯願聽許。'},{lab:'原典・第四節',q:'隨汝所問，吾當解說，令汝歡喜。'}],
+  next:''}
+];
+
+/* ───────── 資料：經文白話（正解依讀本「白話直譯」原句；錯項為常見誤讀） ───────── */
+const W=[
+ {seg:1,q:'如是我聞',a:'我是這樣親自聽聞的',x:['我聽說好像是這樣','如此這般，我才終於聽懂','我願意這樣聽從佛說']},
+ {seg:2,q:'眾所知識得陀羅尼',a:'眾人所共同認識的大士：他們已得陀羅尼（總持而不忘失的能力）',x:['眾人都知道陀羅尼是一種咒語，人人可得','大家都在學習怎麼得到陀羅尼','眾生所知道的學問，都已寫成陀羅尼']},
+ {seg:2,q:'成就辯才樂說無盡',a:'成就辯才而樂於說法無有窮盡',x:['辯才好到別人說不過他，所以很快樂','說話沒完沒了，停不下來','贏得辯論，享受無盡的讚美']},
+ {seg:2,q:'安住三昧而不動轉',a:'安住在三昧之中而心不動搖、不轉變',x:['在三昧中靜坐，身體一動也不動','住在三昧裡面，從此不再轉生','安穩地住著，不再轉動法輪']},
+ {seg:2,q:'得深法忍入深法門',a:'得到甚深的法忍、進入甚深的法門',x:['忍受深奧佛法的艱苦，勉強入門','得到很深的忍耐力，可以進入山門','忍住不說深法，只開淺門']},
+ {seg:2,q:'摧伏眾魔降諸怨敵',a:'摧折降伏眾魔與一切怨敵',x:['與魔王結盟，化敵為友','躲避眾魔，遠離怨家','被眾魔摧伏，向怨敵投降']},
+ {seg:2,q:'有大慈悲諸相嚴身',a:'以大慈悲心而使諸相莊嚴其身',x:['以華麗的衣飾莊嚴身體','有慈悲心的人，長相都很端正','用各種威猛的相貌嚇阻眾生']},
+ {seg:2,q:'於大精進得到彼岸',a:'在大精進上已到達彼岸',x:['精進划船，渡到河的對岸','用盡力氣，終於抵達海邊','因為精進太過，反而停在此岸']},
+ {seg:2,q:'善知一切言辭方便',a:'善於通曉一切言辭的方便',x:['懂得說好話討人歡心','通曉各國語言，旅行方便','善於寫文章、作詩詞']},
+ {seg:2,q:'悉以得住三解脫門',a:'全都已安住於三解脫門',x:['都已走出三道解脫的大門','都住在三座解脫寺裡','全都拿到三扇門的鑰匙']},
+ {seg:2,q:'以無礙智通達三世',a:'以無有障礙的智慧通達過去、現在、未來三世',x:['用沒有障礙的身體遊歷三界','用智慧打通三個世界的道路','用聰明才智通曉三代的歷史']},
+ {seg:2,q:'發決定心不捨一切',a:'發起決定之心而不捨棄任何一個眾生',x:['下定決心，什麼東西都不肯丟','心意已決，一切都不再改變','決定出家，卻捨不得一切親人']},
+ {seg:2,q:'憶念義趣堪忍智慧',a:'憶持所念的義理旨趣並具足堪能安忍的智慧',x:['回憶有趣的往事，忍住不笑','記得意義與趣味，忍耐愚痴的人','想念朋友的情義，忍受離別']},
+ {seg:3,q:'多種善根樂大法者',a:'多生種下善根而喜樂大法的',x:['種了很多樹根，喜歡大場面','善根種得多，所以快樂又富有','種種善人都喜歡大型法會']},
+ {seg:4,q:'令諸魔宮隱蔽不現',a:'使諸魔的宮殿隱蔽而不能現起',x:['讓魔王把宮殿藏起來保護自己','令魔宮隱身，伺機作亂','把魔宮遮起來，好讓人看不見佛']},
+ {seg:4,q:'摧伏自大增上慢者',a:'摧折降伏那些自大而生增上慢的人',x:['摧毀自己的大我，增加傲慢','讓自大的人更加上進','打倒比自己大、比自己快的人']},
+ {seg:4,q:'計有所得住諸見者，皆悉令發捨離之心',a:'那些計較有所得、安住在種種見解裡的人，全都令他發起捨離之心',x:['那些計算收入、住在各處的人，全都令他離家','有所得的人，都令他把所得捨給別人','住在各種見解裡的人，都令他換一個更好的見解']},
+ {seg:4,q:'樂小法者令不疑大法',a:'喜樂小法的人令他對大法不生疑惑',x:['喜歡小法的人，要令他放棄小法','喜歡小法的人，不必讓他知道大法','喜歡小法的人，令他懷疑大法']},
+ {seg:4,q:'偏袒右肩右膝著地',a:'把右肩的衣服偏開、右膝著地',x:['偏向右邊坐，右腳伸直','袒護右邊的人，跪在地上','把右肩靠在地上休息']},
+ {seg:4,q:'我今欲於如來法中少有所問，唯願聽許',a:'我今天想在如來的法中稍有請問，唯願您允許',x:['我今天沒什麼問題，只想聽講','我想問如來一點私事，請您聽我說','我想在如來的法會中，聽一點點就好']},
+ {seg:4,q:'隨汝所問，吾當解說，令汝歡喜',a:'隨你所問，我當為你解說，令你歡喜',x:['問題隨你，但我只解說令你歡喜的部分','跟著你的問題走，我自己也很歡喜','你問什麼都行，但我不一定回答']}
+];
+
+/* ───────── 資料：原文填空（經文名句，逐字照錄） ───────── */
+const F=[
+ {seg:1,v:['如是我聞：','一時，佛在王舍城耆闍崛山中，'],ln:1,ans:'王舍城',opts:['王舍城','舍衛國','毘舍離','迦毘羅'],note:'法會處所'},
+ {seg:1,v:['與大比丘僧三萬二千人俱，','菩薩摩訶薩七萬二千——'],ln:1,ans:'七萬二千',opts:['七萬二千','三萬二千','八萬四千','一萬二千'],note:'菩薩倍於比丘'},
+ {seg:2,v:['眾所知識得陀羅尼，成就辯才樂說無盡，','安住三昧而不動轉，善能了知無盡之慧，'],ln:1,ans:'不動轉',opts:['不動轉','不退轉','不散亂','不生滅'],note:'地基兩句之一'},
+ {seg:2,v:['悉以得住三解脫門，以無礙智通達三世，'],ln:0,ans:'三解脫門',opts:['三解脫門','四聖諦法','三昧正受','無量法門'],note:'地基兩句之二'},
+ {seg:2,v:['悉以得住三解脫門，以無礙智通達三世，'],ln:0,ans:'通達三世',opts:['通達三世','了知三界','遍知十方','觀察三時'],note:'智柱：所知已無滯礙'},
+ {seg:2,v:['於大精進得到彼岸，善知一切言辭方便，'],ln:0,ans:'言辭方便',opts:['言辭方便','世間技藝','神通變化','經論義理'],note:'方便柱：有證而能起用'},
+ {seg:2,v:['發決定心不捨一切，憶念義趣堪忍智慧，','其諸菩薩德皆如是——'],ln:1,ans:'皆如是',opts:['皆如是','各不同','有高下','不可說'],note:'名號無自性的根據'},
+ {seg:3,v:['諸根常定不亂菩薩、實音聲菩薩、'],ln:0,ans:'常定不亂',opts:['常定不亂','寂靜無為','清淨無垢','堅固不動'],note:'名號對應「安住三昧而不動轉」'},
+ {seg:3,v:['文殊師利法王子菩薩、彌勒菩薩、'],ln:0,ans:'彌勒',opts:['彌勒','普賢','觀世音','地藏'],note:'二十六位菩薩名號'},
+ {seg:3,v:['喜王菩薩、堅勢菩薩、堅意菩薩。'],ln:0,ans:'堅意',opts:['堅意','淨意','大相','光德'],note:'名單最後一位，正是本品的發問者'},
+ {seg:4,v:['欲守護佛種、法種、僧種，','令諸魔宮隱蔽不現，'],ln:0,ans:'僧種',opts:['僧種','戒種','智種','慧種'],note:'守護三寶之種'},
+ {seg:4,v:['未種善根者今當令種、','已種善根者當令增長，'],ln:1,ans:'增長',opts:['增長','成就','不退','堅固'],note:'對象換，藥就換'},
+ {seg:4,v:['計有所得住諸見者，','皆悉令發捨離之心，'],ln:1,ans:'捨離',opts:['捨離','歡喜','精進','厭離'],note:'整張清單的核心'},
+ {seg:4,v:['樂小法者令不疑大法、','樂大法者令生歡喜。'],ln:0,ans:'不疑',opts:['不疑','捨棄','轉修','讚歎'],note:'不強齊一，是慈悲之細'},
+ {seg:4,v:['「世尊！我今欲於如來法中少有所問，','唯願聽許。」'],ln:0,ans:'少有所問',opts:['少有所問','廣有所問','多所請問','略有所疑'],note:'以最少的言辭啟動最廣的度化'},
+ {seg:4,v:['佛告堅意：','「隨汝所問，吾當解說，令汝歡喜。」'],ln:1,ans:'歡喜',opts:['歡喜','開解','得度','無疑'],note:'佛的允許：序分結束，正說開始'}
+];
+
+/* ───────── 資料：中論對讀（讀本「中觀義理」卡所引《中論》頌） ───────── */
+const V={
+ V1:{p:'觀四諦品第二十四',v:['眾因緣生法，我說即是空，','亦為是假名，亦是中道義。']},
+ V2:{p:'歸敬偈',v:['不生亦不滅，不常亦不斷，','不一亦不異，不來亦不出。']},
+ V3:{p:'觀法品第十八',v:['若無有我者，何得有我所？','滅我我所故，名得無我智。']},
+ V4:{p:'觀行品第十三',v:['大聖說空法，為離諸見故；','若復見有空，諸人不可化。']},
+ V5:{p:'觀因緣品第一',v:['如諸法自性，不在於緣中，','以無自性故，他性亦復無。']},
+ V6:{p:'觀涅槃品第二十五',v:['無得亦無至，不斷亦不常，','不生亦不滅，是說名涅槃。']},
+ V7:{p:'觀法品第十八',v:['諸佛或說我，或說於無我，','諸法實相中，無我無非我。']},
+ V8:{p:'觀有無品第十五',v:['若人見有無，見自性他性，','如是則不見，佛法真實義。']},
+ V9:{p:'觀如來品第二十二',v:['如來所有性，即是世間性，','如來無有性，世間亦無性。']},
+ V10:{p:'觀三相品第七',v:['如幻亦如夢，如乾闥婆城，','所說生住滅，其相亦如是。']},
+ V11:{p:'觀去來品第二',v:['已去無有去，未去亦無去，','離已去未去，去時亦無去。']},
+ V12:{p:'觀法品第十八',v:['諸法實相者，心行言語斷，','無生亦無滅，寂滅如涅槃。']},
+ V13:{p:'觀四諦品第二十四',v:['以有空義故，一切法得成，','若無空義者，一切則不成。']}
+};
+const K=[
+ {seg:1,ch:'2-1',q:'一時，佛在王舍城耆闍崛山中，與大比丘僧三萬二千人俱',h:'時、處、數記得極詳，卻無一有自性',a:'V1',d:'二諦不相礙：正因是假名，才記得下來；正因無自性，記下來也不成執。',o:['V6','V8','V11']},
+ {seg:2,ch:'2-2',q:'悉以得住三解脫門',h:'起身發問時，德行不增也不減',a:'V2',d:'故菩薩起身發問時德行不減，說法度眾時德行不增。',o:['V4','V10','V3']},
+ {seg:3,ch:'2-3',q:'其名曰：轉不退法輪菩薩、發心即轉法輪菩薩',h:'名號一被讀成身分，就立了「我」與「我的」',a:'V3',d:'名號一旦被讀成「我是某某菩薩」，即立我；隨之而有「我的德行、我的位次」，即立我所。',o:['V1','V13','V11']},
+ {seg:4,ch:'2-4',q:'計有所得住諸見者，皆悉令發捨離之心',h:'連「空」也不可再執為所得',a:'V4',d:'若把「空」再執為一個所得之境，病比先前更重。',o:['V9','V5','V2']},
+ {seg:2,ch:'3-1',q:'以無礙智通達三世……安住三昧而不動轉……成就辯才樂說無盡',h:'智、定、方便三柱，互待而成',a:'V5',d:'三柱是互待而成：無智則定成枯定，無定則智成浮辯，無方便則二者不能及人。',o:['V12','V10','V1']},
+ {seg:2,ch:'3-2',q:'安住三昧而不動轉',h:'三昧不是可入可出、可得可失之境',a:'V6',d:'相對的安靜必落兩邊——以為定境可長保是「常」，以為出定即失是「斷」。',o:['V3','V7','V13']},
+ {seg:4,ch:'4-2',q:'未種善根者今當令種、已種善根者當令增長',h:'對象換，藥就換',a:'V7',d:'堅意菩薩的四對機四對治即此隨宜之理的展開：對象換，藥即換。',o:['V11','V9','V1']},
+ {seg:4,ch:'4-3',q:'皆悉令發捨離之心',h:'所破的是「見」，不是「法」',a:'V8',d:'破邪顯正並不是以正見取代邪見，而是使一切見自息',o:['V5','V10','V6']},
+ {seg:4,ch:'5-1',q:'偏袒右肩右膝著地，合掌向佛',h:'表相與實相，不是兩樣東西',a:'V9',d:'說「偏袒右肩合掌請問」與說「安住三昧而不動轉」，所指是同一位菩薩的同一刻。',o:['V13','V3','V12']},
+ {seg:2,ch:'5-3',q:'有大慈悲諸相嚴身……攝取最尊嚴淨佛土',h:'名相莊嚴：說它是幻，不是說一無所有',a:'V10',d:'相宛然而不可得，不可得而相宛然。',o:['V7','V12','V2']},
+ {seg:4,ch:'6-1',q:'作是念已，即從座起',h:'起身宛然，動的自性卻找不到',a:'V11',d:'動作宛然而動之自性不可得，故此動不違「不動轉」。',o:['V3','V8','V13']},
+ {seg:4,ch:'6-2',q:'隨汝所問，吾當解說，令汝歡喜',h:'言語道斷，斷的是「以言語取得實相」這條路',a:'V12',d:'若言語斷即不許發問，則佛不應答「隨汝所問」。',o:['V1','V5','V9']},
+ {seg:4,ch:'7-3',q:'若有未發阿耨多羅三藐三菩提心者當令發心',h:'空不是崩壞，而是一切得以成立的前提',a:'V13',d:'正因性空，三解脫門才可安（無一定境須守）、慈悲對照表才可行（藥病俱可轉）、名號才可立（假名無礙）。',o:['V4','V10','V6']}
+];
+
+/* ───────── 工具 ───────── */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const CN='零一二三四五六七八九十';
+const cn=n=>n<=10?CN[n]:(n<20?'十'+CN[n-10]:CN[Math.floor(n/10)]+'十'+(n%10?CN[n%10]:''));
+const mmss=t=>Math.floor(t/60)+':'+String(t%60).padStart(2,'0');
+const store={get(k,d){try{const v=localStorage.getItem('slgz1:'+k);return v==null?d:JSON.parse(v);}catch(e){return d;}},set(k,v){try{localStorage.setItem('slgz1:'+k,JSON.stringify(v));}catch(e){}}};
+function verseHTML(s){
+  if(s.v) return `<div class="verse"><div class="lab">${esc(s.lab)}</div>${s.v.map(l=>`<p class="ln">${esc(l)}</p>`).join('')}${s.src?`<p class="src">──《中論》${esc(s.src)}</p>`:''}</div>`;
+  return `<div class="verse"><div class="lab">${esc(s.lab)}</div><p class="quote">「${esc(s.q)}」</p></div>`;
+}
+const chName=c=>{const p=String(c).split('-');return `第${cn(+p[0])}章第${cn(+p[1])}節`;};
+function vlink(seg,ch){
+  const s=SEG[seg], c=ch||s.ch;
+  return `<p class="vlink"><a href="https://youtu.be/${VID}?t=${s.t}" target="_blank" rel="noopener">▶ 回看影片・第${cn(seg)}${UNIT} ${mmss(s.t)}</a><a href="${READ}${c}" target="_blank" rel="noopener">讀本・${chName(c)} →</a></p>`;
+}
+const STAGES=[
+ {k:'o1',t:'序脈排序',d:'排出九個疑問'},
+ {k:'d1',t:'過招',d:'疑者出招，你接'},
+ {k:'w1',t:'經文白話',d:'一句一句拆'},
+ {k:'f1',t:'原文填空',d:'經文名句'},
+ {k:'k1',t:'中論對讀',d:'經文↔中論頌'},
+ {k:'m',t:'配對快打',d:'疑問↔答招'}
+];
+let S={stage:0,best:store.get('best',{}),sub:null};
+
+function renderNav(){
+  $('#stages').innerHTML=STAGES.map((s,i)=>{
+    const b=S.best[s.k];
+    const mark=b==null?'':(s.k==='m'?`最佳 ${b} 秒`:`最佳 ${b}`);
+    return `<button class="stg" data-i="${i}" aria-current="${i===S.stage}"><b>第${cn(i+1)}關</b><span>${s.t}</span><em>${mark||s.d}</em></button>`;
+  }).join('');
+  document.querySelectorAll('.stg').forEach(b=>b.onclick=()=>go(+b.dataset.i));
+}
+function go(i){S.stage=i;S.sub=null;try{history.replaceState(null,'','#'+STAGES[i].k);}catch(e){}renderNav();render();window.scrollTo({top:0,behavior:'smooth'});}
+function saveBest(k,v,lowerBetter){
+  const o=S.best[k];
+  if(o==null||(lowerBetter?v<o:(+String(v).split('/')[0])>(+String(o).split('/')[0]))){S.best[k]=v;store.set('best',S.best);}
+}
+function render(){
+  const k=STAGES[S.stage].k;
+  if(k==='o1') orderStage();
+  if(k==='d1') duelStage();
+  if(k==='w1') choiceStage('w1');
+  if(k==='f1') fillStage();
+  if(k==='k1') choiceStage('k1');
+  if(k==='m') matchStage();
+}
+
+/* ───────── 第一關：序脈排序 ───────── */
+function orderStage(){
+  const list=A;
+  if(!S.sub) S.sub={pool:shuffle(list.map(x=>x.id)),seq:[],checked:false};
+  const st=S.sub, byId=Object.fromEntries(list.map(x=>[x.id,x]));
+  const head=`<div class="ptitle"><h2>序脈・疑者九問</h2><p>${list.length} 張卡</p></div><p class="hint">序分的經文一節接一節，回答讀者心裡的疑問：前一個答案，引出下一個問題。依經文先後點選排序。</p>`;
+  if(!st.checked){
+    const cards=st.pool.map(id=>{const p=st.seq.indexOf(id);return `<button class="ocard${p>=0?' sel':''}" data-id="${id}"><span class="n">${p>=0?p+1:''}</span><span class="t">${esc(byId[id].q)}</span></button>`;}).join('');
+    $('#main').innerHTML=`<section class="panel">${head}<div class="olist">${cards}</div>
+      <div class="bar"><span class="score">已排 ${st.seq.length} / ${list.length}　點已排的卡可退回</span>
+      <span style="display:flex;gap:8px"><button class="btn ghost" id="reset">重排</button><button class="btn" id="check" ${st.seq.length<list.length?'disabled':''}>核對</button></span></div></section>`;
+    document.querySelectorAll('.ocard').forEach(b=>b.onclick=()=>{
+      const id=b.dataset.id,p=st.seq.indexOf(id);
+      if(p>=0) st.seq=st.seq.slice(0,p); else st.seq.push(id);
+      render();
+    });
+    $('#reset').onclick=()=>{st.seq=[];render();};
+    $('#check').onclick=()=>{st.checked=true;render();};
+    return;
+  }
+  const right=list.map(x=>x.id); let ok=0;
+  const rows=right.map((id,i)=>{
+    const good=st.seq[i]===id; if(good) ok++;
+    const x=byId[id], s=SEG[x.seg];
+    const yours=good?'':`<span class="score">（你排在第 ${st.seq.indexOf(id)+1} 位）</span>`;
+    const link=i<right.length-1&&x.next?`<p class="link">↓ ${esc(x.next)}</p>`:'';
+    return `<div class="ocard ${good?'good':'badpos'}"><span class="n">${i+1}</span><span class="t">${esc(x.q)} ${yours}<br><span class="score">${esc(x.round)}・${esc(s.n)}　放不下：${esc(x.keep)}</span>　<a href="https://youtu.be/${VID}?t=${s.t}" target="_blank" rel="noopener">▶ ${mmss(s.t)}</a></span></div>${link}`;
+  }).join('');
+  saveBest('o1',`${ok}/${list.length}`);
+  $('#main').innerHTML=`<section class="panel">${head}
+    <div class="end"><p class="big">${ok} / ${list.length}</p><p class="hint">綠色是位置正確，紅色是排錯的位置。每兩張卡之間的朱字，就是經文「為什麼下一步這樣接」。</p></div>
+    <div class="olist">${rows}</div>
+    <div class="bar"><button class="btn ghost" id="again">再排一次</button><button class="btn" id="nextStage">下一關</button></div></section>`;
+  $('#again').onclick=()=>{S.sub=null;render();};
+  $('#nextStage').onclick=()=>go(S.stage+1);
+  renderNav();
+}
+
+/* ───────── 第二關：疑者出招・你替經文接 ───────── */
+function duelStage(){
+  const list=A;
+  if(!S.sub) S.sub={i:0,phase:'ask',score:0,opts:null,pick:null};
+  const st=S.sub;
+  if(st.i>=list.length) return duelEnd();
+  const x=list[st.i];
+  if(!st.opts) st.opts=shuffle([x.id,...shuffle(list.filter(y=>y.id!==x.id).map(y=>y.id)).slice(0,3)]);
+  const byId=Object.fromEntries(list.map(y=>[y.id,y]));
+  const prev=st.i>0?list[st.i-1].next:'';
+  let html=`<section class="panel"><div class="ptitle"><h2>過招・序分</h2><p>第 ${st.i+1} / ${list.length} 回合</p></div>
+   ${prev?`<p class="retreat">${esc(prev)}</p>`:''}
+   <div class="qrow"><div class="pill"><i>第${cn(st.i+1)}問</i><small>${esc(x.round)}</small></div><div class="qt"><p class="qbig">${esc(x.q)}</p><p class="qmeta">疑從哪來：<b>${esc(x.basis)}</b>｜放不下：<b>${esc(x.keep)}</b></p></div></div>
+   <p class="hint">經文用哪一招接住這個疑問？</p>
+   <div class="opts">${st.opts.map(id=>{const o=byId[id];let c='';
+     if(st.phase!=='ask'){ if(id===x.id) c='right'; else if(id===st.pick) c='wrong'; else c='dim'; }
+     return `<button class="opt ${c}" data-id="${id}" ${st.phase!=='ask'?'disabled':''}><strong>${esc(o.name)}</strong><span>${esc(o.tag)}</span></button>`;}).join('')}</div>`;
+  if(st.phase!=='ask'){
+    const good=st.pick===x.id, w=byId[st.pick];
+    html+=`<div class="fb ${good?'ok':'no'}"><h3>${good?'接得正著':'這一招接偏了'}</h3>
+      ${good?'':`<p>「${esc(w.name)}」接的是另一個疑問：${esc(w.q)} 這一問，疑者放不下的是「${esc(x.keep)}」。正解是「${esc(x.name)}」。</p>`}
+      <p><b>經文怎麼接：</b>${esc(x.gist)}</p>${x.src.map(verseHTML).join('')}${vlink(x.seg,x.ch)}</div>
+      <div class="bar"><span class="score">接對 ${st.score}</span><button class="btn" id="nx">${st.i===list.length-1?'看結果':'下一回合'}</button></div>`;
+  } else {
+    html+=`<div class="bar"><span class="score">接對 ${st.score}</span></div>`;
+  }
+  html+=`</section>`;
+  $('#main').innerHTML=html;
+  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{st.pick=b.dataset.id;if(st.pick===x.id)st.score++;st.phase='answered';render();});
+  const nx=$('#nx'); if(nx) nx.onclick=()=>{st.i++;st.phase='ask';st.opts=null;st.pick=null;render();window.scrollTo({top:0,behavior:'smooth'});};
+}
+function duelEnd(){
+  const st=S.sub,n=A.length;
+  saveBest('d1',`${st.score}/${n}`);
+  $('#main').innerHTML=`<section class="panel"><div class="ptitle"><h2>過招結束</h2></div>
+   <div class="end"><p class="big">接對 ${st.score} / ${n}</p>
+   <p class="hint">九個疑問一路走完：從「如是我聞」，走到佛的一句「隨汝所問」。下面是序分走成的路。</p>
+   <div class="road">${ROAD.map((r,i)=>`<span>${esc(r)}</span>${i<ROAD.length-1?'<i>→</i>':''}`).join('')}</div>
+   <p class="hint">請帶走這一句：「安住三昧而不動轉」——住而後問。想再深一層，去讀本做本品十題過關檢核。</p></div>
+   <div class="bar"><a class="btn ghost" href="${BLQ}" target="_blank" rel="noopener" style="text-decoration:none">⚔ 讀本闖關檢核</a><span style="display:flex;gap:8px"><button class="btn ghost" id="again">再打一輪</button><button class="btn" id="nextStage">下一關</button></span></div></section>`;
+  $('#again').onclick=()=>{S.sub=null;render();};
+  $('#nextStage').onclick=()=>go(S.stage+1);
+  renderNav();
+}
+
+/* ───────── 第三、五關：難句白話／關鍵提醒（四選一） ───────── */
+function choiceStage(key){
+  const isW=key==='w1', list=isW?W:K, N=10;
+  const title=isW?'經文白話':'中論對讀';
+  if(!S.sub) S.sub={list:shuffle(list.map((_,i)=>i)).slice(0,N),i:0,score:0,pick:null,opts:null};
+  const st=S.sub;
+  if(st.i>=st.list.length){
+    saveBest(key,`${st.score}/${st.list.length}`);
+    $('#main').innerHTML=`<section class="panel"><div class="ptitle"><h2>${title}結束</h2></div><div class="end"><p class="big">${st.score} / ${st.list.length}</p><p class="hint">每輪從 ${list.length} 題中隨機抽 ${N} 題，多玩幾輪就能全部遇到。${isW?'正解都是讀本「白話直譯」的原句。':'每一首頌與說明，都出自讀本各章的「中觀義理」卡。'}</p></div>
+      <div class="bar"><button class="btn ghost" id="again">再來一輪</button><button class="btn" id="nextStage">下一關</button></div></section>`;
+    $('#again').onclick=()=>{S.sub=null;render();};$('#nextStage').onclick=()=>go(S.stage+1);renderNav();return;
+  }
+  const it=list[st.list[st.i]];
+  if(!st.opts) st.opts=shuffle([it.a,...(isW?it.x:it.o)]);
+  const optHTML=o=>{const vv=V[o];return `<strong>${esc(vv.v[0])}<br>${esc(vv.v[1])}</strong><span>《中論》${esc(vv.p)}</span>`;};
+  let html=`<section class="panel"><div class="ptitle"><h2>${title}</h2><p>第 ${st.i+1} / ${st.list.length} 題</p></div>
+    <p class="hint">${isW?'這一句經文，白話是哪一個？錯的選項都是常見的誤讀。':'讀本為這一句經文配了哪一首《中論》頌？'}</p>
+    <div class="verse"><div class="lab">原典・第${cn(it.seg)}${UNIT}・${esc(SEG[it.seg].n)}</div><p class="quote">「${esc(it.q)}」</p></div>
+    ${isW?'':`<p class="retreat">要點：${esc(it.h)}</p>`}
+    <div class="opts">${st.opts.map((o,j)=>{let c='';
+      if(st.pick!=null){ if(o===it.a) c='right'; else if(o===st.pick) c='wrong'; else c='dim'; }
+      return isW?`<button class="opt plain ${c}" data-j="${j}" ${st.pick!=null?'disabled':''}>${esc(o)}</button>`
+               :`<button class="opt ${c}" data-j="${j}" ${st.pick!=null?'disabled':''}>${optHTML(o)}</button>`;}).join('')}</div>`;
+  if(st.pick!=null){
+    const good=st.pick===it.a;
+    html+=`<div class="fb ${good?'ok':'no'}"><h3>${good?'對了':'不是這個意思'}</h3>
+      ${isW?`<p><b>讀本白話：</b>${esc(it.a)}</p>${vlink(it.seg)}`:`${verseHTML({lab:'讀本所引',v:V[it.a].v,src:V[it.a].p})}<p><b>讀本中觀義理：</b>${esc(it.d)}</p>${vlink(it.seg,it.ch)}`}</div>
+      <div class="bar"><span class="score">答對 ${st.score}</span><button class="btn" id="nx">${st.i===st.list.length-1?'看結果':'下一題'}</button></div>`;
+  } else html+=`<div class="bar"><span class="score">答對 ${st.score}</span></div>`;
+  html+=`</section>`;
+  $('#main').innerHTML=html;
+  document.querySelectorAll('.opt[data-j]').forEach(b=>b.onclick=()=>{st.pick=st.opts[+b.dataset.j];if(st.pick===it.a)st.score++;render();});
+  const nx=$('#nx'); if(nx) nx.onclick=()=>{st.i++;st.pick=null;st.opts=null;render();window.scrollTo({top:0,behavior:'smooth'});};
+}
+
+/* ───────── 第四關：原文填空 ───────── */
+function fillStage(){
+  if(!S.sub) S.sub={list:shuffle(F.map((_,i)=>i)).slice(0,10),i:0,score:0,pick:null,opts:null};
+  const st=S.sub;
+  if(st.i>=st.list.length){
+    saveBest('f1',`${st.score}/${st.list.length}`);
+    $('#main').innerHTML=`<section class="panel"><div class="ptitle"><h2>原文填空結束</h2></div><div class="end"><p class="big">${st.score} / ${st.list.length}</p><p class="hint">每輪從 ${F.length} 句中隨機抽十句，多玩幾輪就能全部遇到。</p></div>
+      <div class="bar"><button class="btn ghost" id="again">再來一輪</button><button class="btn" id="nextStage">下一關</button></div></section>`;
+    $('#again').onclick=()=>{S.sub=null;render();};$('#nextStage').onclick=()=>go(S.stage+1);renderNav();return;
+  }
+  const f=F[st.list[st.i]];
+  if(!st.opts) st.opts=shuffle(f.opts);
+  const lines=f.v.map((l,j)=>{
+    if(j!==f.ln) return `<p class="ln">${esc(l)}</p>`;
+    const p=l.indexOf(f.ans);
+    const fill=st.pick?`<span class="blank filled">${esc(f.ans)}</span>`:`<span class="blank">　</span>`;
+    return `<p class="ln">${esc(l.slice(0,p))}${fill}${esc(l.slice(p+f.ans.length))}</p>`;
+  }).join('');
+  let html=`<section class="panel"><div class="ptitle"><h2>原文填空</h2><p>第 ${st.i+1} / ${st.list.length} 句</p></div>
+    <p class="hint">選出空格裡的字。原典一字不改，填的是鳩摩羅什譯本的原文。</p>
+    <div class="verse"><div class="lab">原典・第${cn(f.seg)}${UNIT}・${esc(SEG[f.seg].n)}</div>${lines}</div>
+    <div class="chips">${st.opts.map(o=>{let c='';if(st.pick){if(o===f.ans)c='right';else if(o===st.pick)c='wrong';}
+      return `<button class="chip ${c}" data-o="${esc(o)}" ${st.pick?'disabled':''}>${esc(o)}</button>`;}).join('')}</div>`;
+  if(st.pick){
+    const good=st.pick===f.ans;
+    html+=`<div class="fb ${good?'ok':'no'}"><h3>${good?'對了':'不是「'+esc(st.pick)+'」'}</h3><p>這一句在序分裡的位置：<b>${esc(f.note)}</b>。</p>${vlink(f.seg)}</div>
+      <div class="bar"><span class="score">答對 ${st.score}</span><button class="btn" id="nx">${st.i===st.list.length-1?'看結果':'下一句'}</button></div>`;
+  } else html+=`<div class="bar"><span class="score">答對 ${st.score}</span></div>`;
+  html+=`</section>`;
+  $('#main').innerHTML=html;
+  document.querySelectorAll('.chip[data-o]').forEach(b=>b.onclick=()=>{st.pick=b.dataset.o;if(st.pick===f.ans)st.score++;render();});
+  const nx=$('#nx'); if(nx) nx.onclick=()=>{st.i++;st.pick=null;st.opts=null;render();};
+}
+
+/* ───────── 第六關：配對快打 ───────── */
+let timer=null;
+function matchStage(){
+  if(!S.sub){
+    const pool=shuffle(A).slice(0,6);
+    S.sub={pairs:pool,left:shuffle(pool.map(x=>x.id)),right:shuffle(pool.map(x=>x.id)),done:[],pickL:null,miss:0,t0:null,t:0,bad:null};
+  }
+  const st=S.sub, byId=Object.fromEntries(st.pairs.map(x=>[x.id,x]));
+  const finished=st.done.length===st.pairs.length;
+  if(finished&&timer){clearInterval(timer);timer=null;saveBest('m',+st.t.toFixed(1),true);}
+  let html=`<section class="panel"><div class="ptitle"><h2>配對快打</h2><p>每輪六組，計時</p></div>
+   <p class="hint">先點左邊「疑者放不下的」，再點右邊經文接住它的那一招。配錯會記一次失手。</p>
+   <div class="bar"><span class="score" id="clock">用時 ${st.t.toFixed(1)} 秒｜失手 ${st.miss}｜已配 ${st.done.length} / 6</span>${S.best.m!=null?`<span class="score">最佳 ${S.best.m} 秒</span>`:''}</div>
+   <div class="mgrid"><div class="mcol"><h4>疑者放不下</h4>${st.left.map(id=>{const x=byId[id];
+      const c=st.done.includes(id)?'done':(st.pickL===id?'pick':'');
+      return `<button class="mi ${c}" data-l="${id}" ${st.done.includes(id)?'disabled':''}><span class="src">${esc(x.round)}</span>${esc(x.keep)}</button>`;}).join('')}</div>
+   <div class="mcol"><h4>經文的招</h4>${st.right.map(id=>{const x=byId[id];
+      const c=st.done.includes(id)?'done':(st.bad===id?'shake':'');
+      return `<button class="mi ${c}" data-r="${id}" ${st.done.includes(id)?'disabled':''}>${esc(x.name)}</button>`;}).join('')}</div></div>`;
+  if(finished) html+=`<div class="end"><p class="big">${st.t.toFixed(1)} 秒・失手 ${st.miss}</p><p class="hint">六組全配上了。再來一輪會換一批題。</p><div class="bar" style="width:100%"><button class="btn" id="again">再來一輪</button><button class="btn ghost" id="first">回第一關</button></div></div>`;
+  html+=`</section>`;
+  $('#main').innerHTML=html;
+  document.querySelectorAll('.mi[data-l]').forEach(b=>b.onclick=()=>{
+    if(!st.t0){st.t0=performance.now();timer=setInterval(()=>{st.t=(performance.now()-st.t0)/1000;const c=$('#clock');if(c)c.textContent=`用時 ${st.t.toFixed(1)} 秒｜失手 ${st.miss}｜已配 ${st.done.length} / 6`;},100);}
+    st.pickL=b.dataset.l;st.bad=null;render();
+  });
+  document.querySelectorAll('.mi[data-r]').forEach(b=>b.onclick=()=>{
+    if(!st.pickL) return;
+    if(b.dataset.r===st.pickL){st.done.push(st.pickL);st.pickL=null;st.bad=null;}
+    else{st.miss++;st.bad=b.dataset.r;}
+    render();
+  });
+  const ag=$('#again'); if(ag) ag.onclick=()=>{S.sub=null;render();};
+  const fs=$('#first'); if(fs) fs.onclick=()=>go(0);
+  renderNav();
+}
+
+/* ───────── 開場 ───────── */
+function start(d){
+  const h=(location.hash||'').slice(1), hi=STAGES.findIndex(s=>s.k===h);
+  if(hi>=0) S.stage=hi;
+  if(d&&typeof d.stage==='number'){S.stage=d.stage;S.sub=d.sub||null;}
+  renderNav();render();
+}
+window.addEventListener('hashchange',()=>{const hi=STAGES.findIndex(s=>s.k===(location.hash||'').slice(1));if(hi>=0&&hi!==S.stage)go(hi);});
+window.claude?.hot?.snapshot?.(()=>({stage:S.stage,sub:S.stage===5?null:S.sub}));
+window.claude?.hot?.ready ? window.claude.hot.ready(start) : start(window.claude?.hot?.data ?? {});
+</script>
+</body>
+</html>
